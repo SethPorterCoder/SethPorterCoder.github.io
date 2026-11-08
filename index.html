@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark" data-theme="fluent-dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seth Porter | Software & Firmware Engineer</title>
+    
+    <!-- Google Fonts for All 4 Design Systems -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#111827',
+                            950: '#030712',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons CDN with Fallback -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        if (typeof lucide === 'undefined') {
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"><\/script>');
+        }
+    </script>
+
+    <style>
+        /* ========================================================
+           MULTI-SYSTEM COMPREHENSIVE THEME ENGINE
+           Each system defines completely unique fonts, borders,
+           corner radiuses, glow orbs, shadows, and icon strokes.
+           ======================================================== */
+
+        /* 1. CYBER TECH THEME (Terminal & Precision Engineering HUD) */
+        :root, html[data-theme="tech-dark"] {
+            --bg-page: #030712;
+            --bg-card: rgba(15, 23, 42, 0.78);
+            --bg-card-hover: rgba(30, 41, 59, 0.92);
+            --bg-dropdown: #0f172a;
+            --bg-header: rgba(3, 7, 18, 0.85);
+            --bg-badge: rgba(6, 182, 212, 0.12);
+            --border-color: rgba(51, 65, 85, 0.65);
+            --border-accent: #06b6d4;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-primary: #06b6d4;
+            --accent-secondary: #6366f1;
+            --hero-gradient: linear-gradient(135deg, #6366f1, #06b6d4, #10b981);
+            --font-heading: 'Inter', -apple-system, sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-code: 'Fira Code', monospace;
+            --radius-card: 14px;
+            --radius-btn: 10px;
+            --radius-icon: 10px;
+            --border-icon: 1px solid rgba(6, 182, 212, 0.3);
+            --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.55);
+            --shadow-hover: 0 12px 30px -8px rgba(6, 182, 212, 0.28);
+            --icon-stroke-width: 1.75px;
+            --orb-1: rgba(99, 102, 241, 0.18);
+            --orb-2: rgba(6, 182, 212, 0.16);
+            --orb-3: rgba(16, 185, 129, 0.12);
+        }
+
+        html[data-theme="tech-light"] {
+            --bg-page: #f8fafc;
+            --bg-card: rgba(255, 255, 255, 0.92);
+            --bg-card-hover: #ffffff;
+            --bg-dropdown: #ffffff;
+            --bg-header: rgba(255, 255, 255, 0.88);
+            --bg-badge: #eef2ff;
+            --border-color: #e2e8f0;
+            --border-accent: #4f46e5;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --accent-primary: #4f46e5;
+            --accent-secondary: #0891b2;
+            --hero-gradient: linear-gradient(135deg, #4f46e5, #0284c7, #059669);
+            --font-heading: 'Inter', -apple-system, sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-code: 'Fira Code', monospace;
+            --radius-card: 14px;
+            --radius-btn: 10px;
+            --radius-icon: 10px;
+            --border-icon: 1px solid rgba(79, 70, 229, 0.25);
+            --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 14px 32px -8px rgba(79, 70, 229, 0.2);
+            --icon-stroke-width: 1.75px;
+            --orb-1: rgba(79, 70, 229, 0.12);
+            --orb-2: rgba(6, 182, 212, 0.1);
+            --orb-3: rgba(16, 185, 129, 0.08);
+        }
+
+        /* 2. MICROSOFT FLUENT 2 (Windows 11 Acrylic & Mica Surfaces) */
+        html[data-theme="fluent-dark"] {
+            --bg-page: #1f1f1f;
+            --bg-card: rgba(43, 43, 43, 0.82);
+            --bg-card-hover: rgba(56, 56, 56, 0.95);
+            --bg-dropdown: #2b2b2b;
+            --bg-header: rgba(31, 31, 31, 0.88);
+            --bg-badge: rgba(96, 205, 255, 0.14);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-accent: #60cdff;
+            --text-primary: #ffffff;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --accent-primary: #60cdff;
+            --accent-secondary: #0078d4;
+            --hero-gradient: linear-gradient(135deg, #0078d4, #60cdff, #2b88d8);
+            --font-heading: 'Plus Jakarta Sans', 'Segoe UI Variable', system-ui, sans-serif;
+            --font-body: 'Plus Jakarta Sans', 'Segoe UI Variable', system-ui, sans-serif;
+            --font-code: 'Fira Code', 'Consolas', monospace;
+            --radius-card: 8px;
+            --radius-btn: 6px;
+            --radius-icon: 6px;
+            --border-icon: 1px solid rgba(255, 255, 255, 0.12);
+            --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.45);
+            --shadow-hover: 0 8px 26px rgba(0, 0, 0, 0.65);
+            --icon-stroke-width: 2.0px;
+            --orb-1: rgba(0, 120, 212, 0.22);
+            --orb-2: rgba(96, 205, 255, 0.18);
+            --orb-3: rgba(43, 136, 216, 0.15);
+        }
+
+        html[data-theme="fluent-light"] {
+            --bg-page: #f3f3f3;
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --bg-card-hover: #ffffff;
+            --bg-dropdown: #ffffff;
+            --bg-header: rgba(243, 243, 243, 0.9);
+            --bg-badge: #e5f1fb;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --border-accent: #0067c0;
+            --text-primary: #181818;
+            --text-secondary: #5a5a5a;
+            --text-muted: #8a8a8a;
+            --accent-primary: #0067c0;
+            --accent-secondary: #005a9e;
+            --hero-gradient: linear-gradient(135deg, #0067c0, #005a9e, #0078d4);
+            --font-heading: 'Plus Jakarta Sans', 'Segoe UI Variable', system-ui, sans-serif;
+            --font-body: 'Plus Jakarta Sans', 'Segoe UI Variable', system-ui, sans-serif;
+            --font-code: 'Fira Code', 'Consolas', monospace;
+            --radius-card: 8px;
+            --radius-btn: 6px;
+            --radius-icon: 6px;
+            --border-icon: 1px solid rgba(0, 103, 192, 0.2);
+            --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.14);
+            --icon-stroke-width: 2.0px;
+            --orb-1: rgba(0, 103, 192, 0.12);
+            --orb-2: rgba(0, 120, 212, 0.09);
+            --orb-3: rgba(43, 136, 216, 0.08);
+        }
+
+        /* 3. COMFORT COZY (Warm Editorial Bookshop & Parchment) */
+        html[data-theme="comfort-dark"] {
+            --bg-page: #191614;
+            --bg-card: #25201d;
+            --bg-card-hover: #312b26;
+            --bg-dropdown: #25201d;
+            --bg-header: rgba(25, 22, 20, 0.94);
+            --bg-badge: #382c24;
+            --border-color: #40362f;
+            --border-accent: #e07a5f;
+            --text-primary: #f5ebe0;
+            --text-secondary: #d6ccc2;
+            --text-muted: #a39589;
+            --accent-primary: #e07a5f;
+            --accent-secondary: #f4a261;
+            --hero-gradient: linear-gradient(135deg, #e07a5f, #f4a261, #819a77);
+            --font-heading: 'Lora', Georgia, serif;
+            --font-body: 'Lora', Georgia, serif;
+            --font-code: 'Fira Code', monospace;
+            --radius-card: 16px;
+            --radius-btn: 12px;
+            --radius-icon: 14px;
+            --border-icon: 1px solid rgba(224, 122, 95, 0.35);
+            --shadow-card: 0 4px 22px rgba(0, 0, 0, 0.45);
+            --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.6);
+            --icon-stroke-width: 1.5px;
+            --orb-1: rgba(224, 122, 95, 0.18);
+            --orb-2: rgba(244, 162, 97, 0.15);
+            --orb-3: rgba(129, 154, 119, 0.12);
+        }
+
+        html[data-theme="comfort-light"] {
+            --bg-page: #faf6f0;
+            --bg-card: #fffdfa;
+            --bg-card-hover: #f7f1e6;
+            --bg-dropdown: #ffffff;
+            --bg-header: rgba(250, 246, 240, 0.94);
+            --bg-badge: #f1e4d6;
+            --border-color: #e6ded3;
+            --border-accent: #c15c3d;
+            --text-primary: #2d2620;
+            --text-secondary: #574e46;
+            --text-muted: #8d8175;
+            --accent-primary: #c15c3d;
+            --accent-secondary: #3d5a80;
+            --hero-gradient: linear-gradient(135deg, #c15c3d, #f4a261, #3d5a80);
+            --font-heading: 'Lora', Georgia, serif;
+            --font-body: 'Lora', Georgia, serif;
+            --font-code: 'Fira Code', monospace;
+            --radius-card: 16px;
+            --radius-btn: 12px;
+            --radius-icon: 14px;
+            --border-icon: 1px solid rgba(193, 92, 61, 0.25);
+            --shadow-card: 0 3px 14px rgba(60, 40, 20, 0.06);
+            --shadow-hover: 0 10px 28px rgba(60, 40, 20, 0.12);
+            --icon-stroke-width: 1.5px;
+            --orb-1: rgba(193, 92, 61, 0.12);
+            --orb-2: rgba(244, 162, 97, 0.1);
+            --orb-3: rgba(61, 90, 128, 0.08);
+        }
+
+        /* Applied Typography & Elements */
+        body {
+            background-color: var(--bg-page) !important;
+            color: var(--text-primary) !important;
+            font-family: var(--font-body) !important;
+            transition: background-color 0.35s ease, color 0.35s ease;
+        }
+
+        h1, h2, h3, h4, .theme-heading {
+            font-family: var(--font-heading) !important;
+        }
+
+        .code-font {
+            font-family: var(--font-code) !important;
+        }
+
+        /* Morphing Dynamic Gradient Text */
+        .dynamic-gradient-text {
+            background: var(--hero-gradient) !important;
+            -webkit-background-clip: text !important;
+            background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            transition: background 0.4s ease;
+        }
+
+        /* SVG Dynamic Stroke & Morphing */
+        svg.lucide {
+            stroke-width: var(--icon-stroke-width, 2px) !important;
+            transition: stroke-width 0.3s ease;
+        }
+
+        /* Glassmorphism & Adaptive Surfaces */
+        .glass-card {
+            background: var(--bg-card) !important;
+            border-color: var(--border-color) !important;
+            border-radius: var(--radius-card) !important;
+            box-shadow: var(--shadow-card) !important;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card-hover:hover {
+            background: var(--bg-card-hover) !important;
+            box-shadow: var(--shadow-hover) !important;
+            transform: translateY(-4px);
+            border-color: var(--border-accent) !important;
+        }
+
+        /* Solid, Non-Transparent Theme Changer Menu */
+        #theme-dropdown-menu {
+            background-color: var(--bg-dropdown, #2b2b2b) !important;
+            opacity: 1 !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
+        /* Dynamic Morphing Icon Badges */
+        .icon-badge {
+            border-radius: var(--radius-icon) !important;
+            background-color: var(--bg-badge) !important;
+            color: var(--accent-primary) !important;
+            border: var(--border-icon) !important;
+            transition: all 0.3s ease;
+        }
+
+        /* Dynamic Buttons */
+        .theme-btn {
+            border-radius: var(--radius-btn) !important;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Ambient Dynamic Glow Orbs (NO GRID) */
+        .ambient-orb-1 {
+            background-color: var(--orb-1);
+            transition: background-color 0.4s ease;
+        }
+        .ambient-orb-2 {
+            background-color: var(--orb-2);
+            transition: background-color 0.4s ease;
+        }
+        .ambient-orb-3 {
+            background-color: var(--orb-3);
+            transition: background-color 0.4s ease;
+        }
+
+        /* Scroll & Interactive Animations Engine */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered delay classes */
+        .stagger-1 { transition-delay: 80ms; }
+        .stagger-2 { transition-delay: 160ms; }
+        .stagger-3 { transition-delay: 240ms; }
+        .stagger-4 { transition-delay: 320ms; }
+
+        /* Pulsing live indicator */
+        @keyframes pulseDot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.35); opacity: 0.6; }
+        }
+        .live-dot {
+            animation: pulseDot 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative selection:bg-cyan-500 selection:text-white transition-colors duration-300">
+
+    <!-- Atmospheric Dynamic Lighting Canvas (GRID IS COMPLETELY REMOVED) -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-32 -left-32 w-[34rem] h-[34rem] rounded-full blur-3xl ambient-orb-1"></div>
+        <div class="absolute top-1/3 -right-32 w-[32rem] h-[32rem] rounded-full blur-3xl ambient-orb-2"></div>
+        <div class="absolute bottom-10 left-1/4 w-[36rem] h-[36rem] rounded-full blur-3xl ambient-orb-3"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-md border-b transition-colors" style="background-color: var(--bg-header); border-color: var(--border-color);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-9 h-9 theme-btn bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 flex items-center justify-center font-bold code-font text-xs tracking-wider shadow-md group-hover:scale-105 transition-transform" style="background: var(--hero-gradient);">
+                    <span class="text-white drop-shadow-sm font-bold">SP</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-base tracking-tight transition-colors" style="color: var(--text-primary);">
+                        Seth Porter
+                    </span>
+                    <span class="text-[10px] code-font hidden sm:inline" style="color: var(--text-muted);">Software & Firmware Engineer</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#about" class="transition-colors hover:opacity-75" style="color: var(--text-secondary);">About</a>
+                <a href="#skills" class="transition-colors hover:opacity-75" style="color: var(--text-secondary);">Skills</a>
+                <a href="#experience" class="transition-colors hover:opacity-75" style="color: var(--text-secondary);">Experience</a>
+                <a href="#projects" class="transition-colors hover:opacity-75" style="color: var(--text-secondary);">Projects</a>
+                <a href="#education" class="transition-colors hover:opacity-75" style="color: var(--text-secondary);">Education</a>
+            </nav>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Multi-System Design Theme Switcher Dropdown -->
+                <div class="relative" id="theme-menu-container">
+                    <button id="theme-dropdown-btn" aria-expanded="false" class="theme-btn flex items-center gap-2 px-3 py-1.5 border text-xs font-semibold shadow-sm transition-all" style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-primary);">
+                        <i data-lucide="palette" class="w-3.5 h-3.5" style="color: var(--accent-primary);"></i>
+                        <span id="active-theme-label">Fluent 2 Dark</span>
+                        <i data-lucide="chevron-down" id="theme-chevron" class="w-3 h-3 text-slate-400 transition-transform duration-200"></i>
+                    </button>
+
+                    <!-- Dropdown Palette Menu (Opaque Solid Background) -->
+                    <div id="theme-dropdown-menu" class="hidden absolute right-0 mt-2 w-72 sm:w-80 rounded-2xl p-3 border shadow-2xl z-50 transition-all" style="border-color: var(--border-color);">
+                        <div class="flex items-center justify-between pb-2 mb-2 border-b text-xs" style="border-color: var(--border-color);">
+                            <span class="font-bold flex items-center gap-1.5" style="color: var(--text-primary);">
+                                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i> Switch Design Systems
+                            </span>
+                            <span class="text-[10px] text-slate-400">6 Custom Themes</span>
+                        </div>
+
+                        <div class="space-y-2 text-xs">
+                            <!-- System 1: Cyber Tech -->
+                            <div class="p-2 rounded-xl border space-y-1.5" style="background-color: var(--bg-page); border-color: var(--border-color);">
+                                <div class="flex items-center justify-between text-[11px] font-semibold" style="color: var(--text-primary);">
+                                    <span class="flex items-center gap-1.5"><i data-lucide="terminal" class="w-3.5 h-3.5 text-cyan-500"></i> Cyber Tech</span>
+                                    <span class="text-[10px] text-slate-400 code-font">Inter</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-1.5">
+                                    <button class="theme-option-btn flex items-center justify-between px-2.5 py-1.5 rounded-lg border text-[11px] transition-all" data-set-theme="tech-light" style="border-color: var(--border-color);">
+                                        <span class="flex items-center gap-1.5"><span>☀️</span> Light</span>
+                                        <div class="flex gap-1"><span class="w-2 h-2 rounded-full bg-slate-100 border"></span><span class="w-2 h-2 rounded-full bg-indigo-600"></span></div>
+                                    </button>
+                                    <button class="theme-option-btn flex items-center justify-between px-2.5 py-1.5 rounded-lg border text-[11px] transition-all" data-set-theme="tech-dark" style="border-color: var(--border-color);">
+                                        <span class="flex items-center gap-1.5"><span>🌙</span> Dark</span>
+                                        <div class="flex gap-1"><span class="w-2 h-2 rounded-full bg-slate-950 border"></span><span class="w-2 h-2 rounded-full bg-cyan-400"></span></div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- System 2: Fluent Design 2 -->
+                            <div class="p-2 rounded-xl border space-y-1.5" style="background-color: var(--bg-page); border-color: var(--border-color);">
+                                <div class="flex items-center justify-between text-[11px] font-semibold" style="color: var(--text-primary);">
+                                    <span class="flex items-center gap-1.5"><i data-lucide="layout-grid" class="w-3.5 h-3.5 text-blue-500"></i> Fluent 2 (MS)</span>
+                                    <span class="text-[10px] text-slate-400">Jakarta Sans</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-1.5">
+                                    <button class="theme-option-btn flex items-center justify-between px-2.5 py-1.5 rounded-lg border text-[11px] transition-all" data-set-theme="fluent-light" style="border-color: var(--border-color);">
+                                        <span class="flex items-center gap-1.5"><span>☀️</span> Light</span>
+                                        <div class="flex gap-1"><span class="w-2 h-2 rounded-full bg-slate-200"></span><span class="w-2 h-2 rounded-full bg-[#0067c0]"></span></div>
+                                    </button>
+                                    <button class="theme-option-btn flex items-center justify-between px-2.5 py-1.5 rounded-lg border text-[11px] transition-all" data-set-theme="fluent-dark" style="border-color: var(--border-color);">
+                                        <span class="flex items-center gap-1.5"><span>🌙</span> Dark</span>
+                                        <div class="flex gap-1"><span class="w-2 h-2 rounded-full bg-[#202020]"></span><span class="w-2 h-2 rounded-full bg-[#60cdff]"></span></div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- System 3: Comfort Cozy (Editorial Parchment) -->
+                            <div class="p-2 rounded-xl border space-y-1.5" style="background-color: var(--bg-page); border-color: var(--border-color);">
+                                <div class="flex items-center justify-between text-[11px] font-semibold" style="color: var(--text-primary);">
+                                    <span class="flex items-center gap-1.5"><i data-lucide="coffee" class="w-3.5 h-3.5 text-amber-600"></i> Comfort Cozy</span>
+                                    <span class="text-[10px] text-slate-400 font-serif">Lora Serif</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-1.5">
+                                    <button class="theme-option-btn flex items-center justify-between px-2.5 py-1.5 rounded-lg border text-[11px] transition-all" data-set-theme="comfort-light" style="border-color: var(--border-color);">
+                                        <span class="flex items-center gap-1.5"><span>☀️</span> Light</span>
+                                        <div class="flex gap-1"><span class="w-2 h-2 rounded-full bg-[#faf6f0]"></span><span class="w-2 h-2 rounded-full bg-[#c15c3d]"></span></div>
+                                    </button>
+                                    <button class="theme-option-btn flex items-center justify-between px-2.5 py-1.5 rounded-lg border text-[11px] transition-all" data-set-theme="comfort-dark" style="border-color: var(--border-color);">
+                                        <span class="flex items-center gap-1.5"><span>🌙</span> Dark</span>
+                                        <div class="flex gap-1"><span class="w-2 h-2 rounded-full bg-[#191614]"></span><span class="w-2 h-2 rounded-full bg-[#e07a5f]"></span></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direct PDF Resume Link Button -->
+                <a id="nav-resume-btn" href="https://drive.google.com/file/d/11DjOgyJH5iuUCALKFYM45RmquKdukFk6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="theme-btn flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold shadow-sm transition-all" style="background-color: var(--bg-badge); color: var(--accent-primary); border: var(--border-icon);">
+                    <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+                    <span>Resume (PDF)</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 py-12">
+
+        <!-- HERO / ABOUT SECTION -->
+        <section id="about" class="pt-6 md:pt-12 pb-6 reveal-on-scroll">
+            <div class="space-y-8">
+                <!-- Status Badge -->
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-medium code-font border shadow-sm" style="background-color: var(--bg-badge); color: var(--accent-primary); border-color: var(--border-color);">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 live-dot"></span>
+                    <span>Software & Firmware Engineer | Tinley Park, IL</span>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div class="lg:col-span-8 space-y-6">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]" style="color: var(--text-primary);">
+                            Engineering <span class="dynamic-gradient-text">Real-Time Cloud Solutions</span> & Embedded Systems
+                        </h1>
+
+                        <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">
+                            Detail-oriented and collaborative software developer with <strong>4+ years</strong> of experience architecting resilient, full-stack applications and low-level embedded platforms. Specialized in bridging physical hardware with distributed cloud environments through <strong>real-time, bidirectional cloud-to-device communication protocols</strong>, remote telemetry synchronization, and high-performance binary delta patching updates (<code class="code-font text-xs px-1.5 py-0.5 rounded" style="background-color: var(--bg-badge); color: var(--accent-primary);">xdelta3</code>). Proven track record translating complex business and industrial requirements into robust, high-availability software.
+                        </p>
+
+                        <!-- Contact & Action Buttons -->
+                        <div class="flex flex-wrap items-center gap-3 pt-2">
+                            <a href="mailto:SethPorterWork@gmail.com" class="theme-btn flex items-center gap-2 px-5 py-2.5 text-white font-semibold shadow-md transition-all hover:scale-[1.02] text-sm" style="background: var(--hero-gradient);">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                                <span>Get In Touch</span>
+                            </a>
+
+                            <!-- Google Drive PDF Direct Resume Link -->
+                            <a id="hero-resume-btn" href="https://drive.google.com/file/d/11DjOgyJH5iuUCALKFYM45RmquKdukFk6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="theme-btn flex items-center gap-2 px-4 py-2.5 border text-sm font-medium transition-all shadow-sm" style="background-color: var(--bg-badge); color: var(--accent-primary); border-color: var(--border-accent);">
+                                <i data-lucide="file-text" class="w-4 h-4"></i>
+                                <span>View Resume (PDF)</span>
+                            </a>
+
+                            <button onclick="copyToClipboard('SethPorterWork@gmail.com', 'Email copied to clipboard!')" class="theme-btn flex items-center gap-2 px-4 py-2.5 glass-card text-sm font-medium transition-all border" style="color: var(--text-secondary); border-color: var(--border-color);">
+                                <i data-lucide="copy" class="w-4 h-4" style="color: var(--accent-primary);"></i>
+                                <span>Copy Email</span>
+                            </button>
+
+                            <button onclick="copyToClipboard('(479) 406-7000', 'Phone number copied!')" class="theme-btn flex items-center gap-2 px-4 py-2.5 glass-card text-sm font-medium transition-all border" style="color: var(--text-secondary); border-color: var(--border-color);">
+                                <i data-lucide="phone" class="w-4 h-4 text-emerald-500"></i>
+                                <span>(479) 406-7000</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Highlights & Core Competency Pillars (With Morphing Theme Icons) -->
+                    <div class="lg:col-span-4 space-y-3.5">
+                        <div class="glass-card glass-card-hover p-4 border flex items-start gap-3.5 reveal-on-scroll stagger-1">
+                            <div class="icon-badge p-2.5 flex items-center justify-center shrink-0 mt-0.5">
+                                <i data-lucide="cloud" data-icon-role="cloud-sync" class="w-5 h-5"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-sm" style="color: var(--text-primary);">Cloud-to-Edge Sync</h4>
+                                <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
+                                    Real-time bidirectional communications between cloud infrastructure and distributed Linux controllers.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card glass-card-hover p-4 border flex items-start gap-3.5 reveal-on-scroll stagger-2">
+                            <div class="icon-badge p-2.5 flex items-center justify-center shrink-0 mt-0.5">
+                                <i data-lucide="binary" data-icon-role="delta-patch" class="w-5 h-5"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-sm" style="color: var(--text-primary);">Delta Patch Compression</h4>
+                                <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
+                                    Dynamic generation of xdelta3 binary patches, slashing remote edge update payloads by up to 99%.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card glass-card-hover p-4 border flex items-start gap-3.5 reveal-on-scroll stagger-3">
+                            <div class="icon-badge p-2.5 flex items-center justify-center shrink-0 mt-0.5">
+                                <i data-lucide="cpu" data-icon-role="embedded-firmware" class="w-5 h-5"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-sm" style="color: var(--text-primary);">Industrial Embedded Firmware</h4>
+                                <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
+                                    dsPIC microcontroller firmware, FPGA flashing pipelines, and automated factory calibration suites.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metric Badges -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t" style="border-color: var(--border-color);">
+                    <div>
+                        <div class="text-2xl font-bold code-font" style="color: var(--accent-primary);">4+ Years</div>
+                        <div class="text-xs" style="color: var(--text-muted);">Software & Embedded Dev</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold code-font text-emerald-500">24/7</div>
+                        <div class="text-xs" style="color: var(--text-muted);">Cloud Asset Availability</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold code-font" style="color: var(--accent-secondary);">IoT / Edge</div>
+                        <div class="text-xs" style="color: var(--text-muted);">Real-Time Data Streaming</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold code-font text-purple-500">AI Pipelines</div>
+                        <div class="text-xs" style="color: var(--text-muted);">Team Workflow Automation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS MATRIX SECTION -->
+        <section id="skills" class="space-y-6 reveal-on-scroll">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold flex items-center gap-3" style="color: var(--text-primary);">
+                        <i data-lucide="layers" data-icon-role="skills-heading" class="w-7 h-7" style="color: var(--accent-primary);"></i>
+                        Technical Skills Matrix
+                    </h2>
+                    <p class="text-sm mt-1" style="color: var(--text-muted);">Programming languages, frameworks, cloud protocols, and embedded environments.</p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap gap-1.5 p-1 glass-card border text-xs code-font">
+                    <button class="skill-tab px-3 py-1.5 theme-btn transition-all font-semibold shadow-sm" data-filter="all" style="background-color: var(--bg-badge); color: var(--accent-primary); border: var(--border-icon);">All</button>
+                    <button class="skill-tab px-3 py-1.5 theme-btn transition-all opacity-70 hover:opacity-100" data-filter="languages" style="color: var(--text-primary);">Languages</button>
+                    <button class="skill-tab px-3 py-1.5 theme-btn transition-all opacity-70 hover:opacity-100" data-filter="frameworks" style="color: var(--text-primary);">Frameworks</button>
+                    <button class="skill-tab px-3 py-1.5 theme-btn transition-all opacity-70 hover:opacity-100" data-filter="embedded" style="color: var(--text-primary);">Embedded/OS</button>
+                    <button class="skill-tab px-3 py-1.5 theme-btn transition-all opacity-70 hover:opacity-100" data-filter="databases" style="color: var(--text-primary);">Databases</button>
+                    <button class="skill-tab px-3 py-1.5 theme-btn transition-all opacity-70 hover:opacity-100" data-filter="tools" style="color: var(--text-primary);">Tools/Cloud</button>
+                </div>
+            </div>
+
+            <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-3.5">
+                <!-- Populated dynamically with dynamic theme icons -->
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCE SECTION -->
+        <section id="experience" class="space-y-8 reveal-on-scroll">
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-bold flex items-center gap-3" style="color: var(--text-primary);">
+                    <i data-lucide="briefcase" data-icon-role="exp-heading" class="w-7 h-7" style="color: var(--accent-primary);"></i>
+                    Professional Experience
+                </h2>
+                <p class="text-sm mt-1" style="color: var(--text-muted);">Engineering accomplishments in industrial automation, cloud monitoring, and firmware development.</p>
+            </div>
+
+            <!-- Vertical Timeline Track with Restored Milestone Node Indicators -->
+            <div class="relative space-y-12 before:absolute before:inset-0 before:left-3 sm:before:left-8 before:w-0.5" style="--timeline-rail: var(--border-color);">
+                <div class="absolute inset-y-0 left-3 sm:left-8 w-0.5" style="background-color: var(--border-color);"></div>
+                
+                <!-- Role 1: W. H. Leary -->
+                <div class="relative pl-8 sm:pl-16 group">
+                    <!-- Restored Glowing Node Marker -->
+                    <div class="absolute left-1.5 sm:left-6 top-1.5 w-3.5 h-3.5 rounded-full border-2 shadow-sm transition-transform group-hover:scale-125 z-10" style="background-color: var(--accent-primary); border-color: var(--bg-page);"></div>
+                    
+                    <div class="glass-card rounded-2xl p-6 space-y-5 border">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-4" style="border-color: var(--border-color);">
+                            <div>
+                                <h3 class="text-xl font-bold flex items-center gap-2" style="color: var(--text-primary);">
+                                    Software Engineer
+                                    <span class="text-xs px-2.5 py-0.5 rounded-full font-normal border" style="background-color: var(--bg-badge); color: var(--accent-primary); border-color: var(--border-accent);">Full-Time</span>
+                                </h3>
+                                <div class="font-medium text-sm mt-0.5" style="color: var(--accent-primary);">W. H. Leary, Co. • Tinley Park, IL</div>
+                            </div>
+                            <div class="code-font text-xs px-3 py-1.5 rounded-lg border w-fit" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">
+                                March 2025 – Present
+                            </div>
+                        </div>
+
+                        <!-- Accomplishments Cards Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="glass-card glass-card-hover p-4 rounded-xl border space-y-1.5 reveal-on-scroll stagger-1">
+                                <div class="flex items-center gap-2 font-semibold text-sm" style="color: var(--text-primary);">
+                                    <i data-lucide="bot" data-icon-role="exp-ai" class="w-4 h-4 text-purple-500"></i> Enterprise AI Workflow Architecture
+                                </div>
+                                <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
+                                    Architected and integrated an enterprise AI workflow into cross-functional team pipelines, accelerating productivity across the organization.
+                                </p>
+                            </div>
+
+                            <div class="glass-card glass-card-hover p-4 rounded-xl border space-y-1.5 reveal-on-scroll stagger-2">
+                                <div class="flex items-center gap-2 font-semibold text-sm" style="color: var(--text-primary);">
+                                    <i data-lucide="activity" data-icon-role="exp-state" class="w-4 h-4 text-emerald-500"></i> Node.js State Machine Monitoring
+                                </div>
+                                <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
+                                    Developed a Node.js based state machine monitoring service to ensure 24/7 availability of global cloud assets and implemented density controls to maintain system stability under heavy loads.
+                                </p>
+                            </div>
+
+                            <div class="glass-card glass-card-hover p-4 rounded-xl border space-y-1.5 reveal-on-scroll stagger-3">
+                                <div class="flex items-center gap-2 font-semibold text-sm" style="color: var(--text-primary);">
+                                    <i data-lucide="cpu" data-icon-role="exp-controllers" class="w-4 h-4" style="color: var(--accent-primary);"></i> Embedded Factory Controllers
+                                </div>
+                                <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
+                                    Designed next generation embedded factory controllers, utilizing C/C++ and Qt to interface with complex industrial hardware and user interfaces.
+                                </p>
+                            </div>
+
+                            <div class="glass-card glass-card-hover p-4 rounded-xl border space-y-1.5 reveal-on-scroll stagger-4">
+                                <div class="flex items-center gap-2 font-semibold text-sm" style="color: var(--text-primary);">
+                                    <i data-lucide="cloud-lightning" data-icon-role="exp-updating" class="w-4 h-4" style="color: var(--accent-secondary);"></i> Remote Update & Delta Patching
+                                </div>
+                                <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
+                                    Engineered an end-to-end remote updating architecture for Linux based factory controllers using Go, Node.js, and AWS EC2. Developed high performance API endpoints to dynamically produce and deliver xdelta3 binary delta patches, streamlining edge hardware software distribution and reducing payload sizes.
+                                </p>
+                            </div>
+
+                            <div class="glass-card glass-card-hover p-4 rounded-xl border space-y-1.5 reveal-on-scroll stagger-1">
+                                <div class="flex items-center gap-2 font-semibold text-sm" style="color: var(--text-primary);">
+                                    <i data-lucide="camera" data-icon-role="exp-cameras" class="w-4 h-4 text-amber-500"></i> AI Vision Camera Integration
+                                </div>
+                                <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
+                                    Developed a Linux based human machine interface application that automated network discovery for AI driven Cognex cameras and provided an intuitive front end interface for operators to define real-time quality check regions of interest on conveyor belt products.
+                                </p>
+                            </div>
+
+                            <div class="glass-card glass-card-hover p-4 rounded-xl border space-y-1.5 reveal-on-scroll stagger-2">
+                                <div class="flex items-center gap-2 font-semibold text-sm" style="color: var(--text-primary);">
+                                    <i data-lucide="bar-chart-3" data-icon-role="exp-dashboards" class="w-4 h-4 text-cyan-500"></i> Production Floor Dashboards
+                                </div>
+                                <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
+                                    Developed and maintained a Linux based embedded web application that polled real-time data from factory controllers to drive high visibility dashboard displays across production floors.
+                                </p>
+                            </div>
+
+                            <div class="glass-card glass-card-hover p-4 rounded-xl border space-y-1.5 md:col-span-2 reveal-on-scroll stagger-3">
+                                <div class="flex items-center gap-2 font-semibold text-sm" style="color: var(--text-primary);">
+                                    <i data-lucide="presentation" data-icon-role="exp-seminars" class="w-4 h-4 text-emerald-500"></i> Executive Technical Seminars & Visualization
+                                </div>
+                                <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
+                                    Conducted high-level technical seminars for industry leaders such as Smurfit Westrock translating complex engineering and software specifications into actionable business solutions. Engineered automated data visualization features that highlighted operational metrics, key performance indicators, and systemic failures for immediate review by floor managers and company executives.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 2: Waymaker Engineering -->
+                <div class="relative pl-8 sm:pl-16 group">
+                    <!-- Restored Glowing Node Marker -->
+                    <div class="absolute left-1.5 sm:left-6 top-1.5 w-3.5 h-3.5 rounded-full border-2 shadow-sm transition-transform group-hover:scale-125 z-10 bg-emerald-500" style="border-color: var(--bg-page);"></div>
+                    
+                    <div class="glass-card rounded-2xl p-6 space-y-5 border">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-4" style="border-color: var(--border-color);">
+                            <div>
+                                <h3 class="text-xl font-bold flex items-center gap-2" style="color: var(--text-primary);">
+                                    Firmware Engineer
+                                    <span class="text-xs px-2.5 py-0.5 rounded-full font-normal border bg-emerald-500/10 text-emerald-500 border-emerald-500/30">Active</span>
+                                </h3>
+                                <div class="text-emerald-500 font-medium text-sm mt-0.5">Waymaker Engineering • Alma, AR</div>
+                            </div>
+                            <div class="code-font text-xs px-3 py-1.5 rounded-lg border w-fit" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">
+                                August 2026 – Present
+                            </div>
+                        </div>
+
+                        <!-- Accomplishments Grid for Waymaker -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="glass-card glass-card-hover p-4 rounded-xl border space-y-1.5 reveal-on-scroll stagger-1">
+                                <div class="flex items-center gap-2 font-semibold text-sm" style="color: var(--text-primary);">
+                                    <i data-lucide="cpu" data-icon-role="exp-dspic" class="w-4 h-4 text-emerald-500"></i> dsPIC Firmware & FPGA Flashing
+                                </div>
+                                <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
+                                    Engineered dsPIC firmware to process host PC command protocols and reliably flash on-board FPGAs across peripheral interfaces.
+                                </p>
+                            </div>
+
+                            <div class="glass-card glass-card-hover p-4 rounded-xl border space-y-1.5 reveal-on-scroll stagger-2">
+                                <div class="flex items-center gap-2 font-semibold text-sm" style="color: var(--text-primary);">
+                                    <i data-lucide="check-check" data-icon-role="exp-calibration" class="w-4 h-4 text-cyan-500"></i> Post-Assembly Automation Suite
+                                </div>
+                                <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
+                                    Built an industrial post assembly suite to automate device provisioning, calibration, and board level fault diagnostics.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTED PROJECTS SHOWCASE -->
+        <section id="projects" class="space-y-8 reveal-on-scroll">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold flex items-center gap-3" style="color: var(--text-primary);">
+                        <i data-lucide="code-2" data-icon-role="proj-heading" class="w-7 h-7" style="color: var(--accent-primary);"></i>
+                        Highlighted Projects
+                    </h2>
+                    <p class="text-sm mt-1" style="color: var(--text-muted);">Full-stack web applications, native desktop tools, and embedded platforms.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Project 1 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between space-y-4 border relative group overflow-hidden reveal-on-scroll stagger-1">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold uppercase tracking-wider code-font" style="color: var(--accent-primary);">Embedded & Cloud</span>
+                            <span class="px-2 py-0.5 rounded text-[10px] code-font border" style="background-color: var(--bg-badge); color: var(--accent-primary); border-color: var(--border-accent);">Production</span>
+                        </div>
+                        <h3 class="text-xl font-bold transition-colors" style="color: var(--text-primary);">
+                            Remote Controller Updating System
+                        </h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+                            End-to-end edge updating pipeline using Go, Node.js, and AWS EC2. Generates and streams dynamic xdelta3 binary patches to Linux controllers, dramatically reducing network payload size for edge firmware deployments and device reliability.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 pt-4 border-t" style="border-color: var(--border-color);">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">Go</span>
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">Node.js</span>
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">AWS EC2</span>
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">xdelta3</span>
+                        </div>
+                        <div class="text-xs code-font flex items-center gap-2 pt-1" style="color: var(--text-muted);">
+                            <i data-lucide="shield-check" data-icon-role="proj-remote" class="w-3.5 h-3.5" style="color: var(--accent-primary);"></i> High-performance dynamic delta streaming architecture
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between space-y-4 border relative group overflow-hidden reveal-on-scroll stagger-2">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold uppercase tracking-wider code-font" style="color: var(--accent-primary);">Full Stack Web</span>
+                            <span class="px-2 py-0.5 rounded text-[10px] code-font border" style="background-color: var(--bg-badge); color: var(--accent-primary); border-color: var(--border-accent);">Web App</span>
+                        </div>
+                        <h3 class="text-xl font-bold transition-colors" style="color: var(--text-primary);">
+                            Bakery Point of Sale (POS)
+                        </h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+                            Full-stack single-page web application featuring React with Vite on the front end, Node.js with Express for a scalable back end, and MySQL for robust data validation and troubleshooting. Designed a highly responsive UI/UX optimized for mobile up to 4K monitors.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 pt-4 border-t" style="border-color: var(--border-color);">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">React</span>
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">Vite</span>
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">Express</span>
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">MySQL</span>
+                        </div>
+                        <div class="text-xs code-font flex items-center gap-2 pt-1" style="color: var(--text-muted);">
+                            <i data-lucide="layout" data-icon-role="proj-pos" class="w-3.5 h-3.5" style="color: var(--accent-primary);"></i> RESTful API endpoints & secure HTTPS connections
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between space-y-4 border relative group overflow-hidden reveal-on-scroll stagger-3">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold uppercase tracking-wider code-font text-emerald-500">Desktop Software</span>
+                            <span class="px-2 py-0.5 rounded text-[10px] code-font border bg-emerald-500/10 text-emerald-500 border-emerald-500/30">Native App</span>
+                        </div>
+                        <h3 class="text-xl font-bold transition-colors" style="color: var(--text-primary);">
+                            Retail Point of Sale System
+                        </h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+                            Fully functional native desktop application built using Java Swing with an IBM DB2 backend. Integrated multi-threading for responsive UI during heavy query execution and built-in two-factor authentication via QR codes.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 pt-4 border-t" style="border-color: var(--border-color);">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">Java Swing</span>
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">IBM DB2</span>
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">Multi-threading</span>
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">2FA / QR</span>
+                        </div>
+                        <div class="text-xs code-font flex items-center gap-2 pt-1" style="color: var(--text-muted);">
+                            <i data-lucide="lock" data-icon-role="proj-retail" class="w-3.5 h-3.5 text-emerald-500"></i> Enterprise Data Validation & Multi-Threaded Execution
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between space-y-4 border relative group overflow-hidden reveal-on-scroll stagger-4">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold uppercase tracking-wider code-font text-amber-500">Game AI & Logic</span>
+                            <span class="px-2 py-0.5 rounded text-[10px] code-font border bg-amber-500/10 text-amber-500 border-amber-500/30">Interactive Game</span>
+                        </div>
+                        <h3 class="text-xl font-bold transition-colors" style="color: var(--text-primary);">
+                            Godot Slime Attack Game
+                        </h3>
+                        <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
+                            Programmed a 2D game application using Godot engine with C# and GDScript to handle algorithmic pathfinding and AI-controlled enemy vectors.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 pt-4 border-t" style="border-color: var(--border-color);">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">Godot Engine</span>
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">C#</span>
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">GDScript</span>
+                            <span class="text-xs code-font px-2.5 py-1 rounded border" style="background-color: var(--bg-page); color: var(--text-secondary); border-color: var(--border-color);">Pathfinding AI</span>
+                        </div>
+                        <div class="text-xs code-font flex items-center gap-2 pt-1" style="color: var(--text-muted);">
+                            <i data-lucide="gamepad-2" data-icon-role="proj-godot" class="w-3.5 h-3.5 text-amber-500"></i> Algorithmic pathfinding & AI-controlled vectors
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="space-y-6 reveal-on-scroll">
+            <h2 class="text-2xl sm:text-3xl font-bold flex items-center gap-3" style="color: var(--text-primary);">
+                <i data-lucide="graduation-cap" data-icon-role="edu-heading" class="w-7 h-7" style="color: var(--accent-primary);"></i>
+                Education
+            </h2>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 border shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="space-y-2">
+                    <div class="flex items-center gap-3">
+                        <div class="icon-badge p-2.5 flex items-center justify-center">
+                            <i data-lucide="award" data-icon-role="edu-badge" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg sm:text-xl font-bold" style="color: var(--text-primary);">
+                                Bachelor of Science in Computer Science
+                            </h3>
+                            <p class="font-medium text-sm" style="color: var(--accent-primary);">
+                                Southern New Hampshire University • Manchester, NH
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex sm:flex-col items-start sm:items-end justify-between sm:justify-center border-t sm:border-t-0 pt-3 sm:pt-0" style="border-color: var(--border-color);">
+                    <span class="text-xs font-medium" style="color: var(--text-muted);">Graduation</span>
+                    <span class="text-sm font-semibold code-font px-3 py-1 rounded-lg border mt-1" style="background-color: var(--bg-page); color: var(--text-primary); border-color: var(--border-color);">
+                        August 2025
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="pt-8 pb-12 border-t text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style="border-color: var(--border-color); color: var(--text-muted);">
+            <div>
+                © 2026 Seth Porter
+            </div>
+            <div class="flex items-center gap-4 code-font">
+                <a href="#about" class="hover:underline" style="color: var(--accent-primary);">Back to Top ↑</a>
+            </div>
+        </footer>
+
+        <!-- TOAST NOTIFICATION -->
+        <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+            <div class="glass-card px-4 py-3 rounded-xl shadow-2xl border flex items-center gap-3 text-sm" style="background-color: var(--bg-card); color: var(--text-primary); border-color: var(--border-color);">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500"></i>
+                <span id="toast-message">Copied to clipboard</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // CONFIGURATION: Google Drive PDF Link
+        const GOOGLE_DRIVE_RESUME_URL = "https://drive.google.com/file/d/11DjOgyJH5iuUCALKFYM45RmquKdukFk6/view?usp=sharing";
+
+        // THEMES REPOSITORY & CONFIGURATION (6 DISTINCT THEMES ACROSS 3 DESIGN SYSTEMS)
+        const themesConfig = {
+            'tech-dark': { name: 'Tech Dark', isDark: true, system: 'Cyber Tech', systemKey: 'tech' },
+            'tech-light': { name: 'Tech Light', isDark: false, system: 'Cyber Tech', systemKey: 'tech' },
+            'fluent-dark': { name: 'Fluent 2 Dark', isDark: true, system: 'Fluent 2', systemKey: 'fluent' },
+            'fluent-light': { name: 'Fluent 2 Light', isDark: false, system: 'Fluent 2', systemKey: 'fluent' },
+            'comfort-dark': { name: 'Comfort Dark', isDark: true, system: 'Comfort Cozy', systemKey: 'comfort' },
+            'comfort-light': { name: 'Comfort Light', isDark: false, system: 'Comfort Cozy', systemKey: 'comfort' }
+        };
+
+        // SYSTEM ICONOGRAPHY REPOSITORIES (ICONS MORPH METAPHOR WITH SYSTEM SELECTION)
+        const systemIconMap = {
+            tech: {
+                'cloud-sync': 'terminal',
+                'delta-patch': 'binary',
+                'embedded-firmware': 'cpu',
+                'skills-heading': 'layers',
+                'exp-heading': 'git-merge',
+                'proj-heading': 'code-2',
+                'edu-heading': 'award',
+                'edu-badge': 'terminal',
+                'exp-ai': 'bot',
+                'exp-state': 'activity',
+                'exp-controllers': 'cpu',
+                'exp-updating': 'cloud-lightning',
+                'exp-cameras': 'crosshair',
+                'exp-dashboards': 'bar-chart-3',
+                'exp-seminars': 'presentation',
+                'exp-dspic': 'cpu',
+                'exp-calibration': 'check-check',
+                'proj-remote': 'shield-check',
+                'proj-pos': 'layout',
+                'proj-retail': 'lock',
+                'proj-godot': 'gamepad-2'
+            },
+            fluent: {
+                'cloud-sync': 'cloud',
+                'delta-patch': 'layers',
+                'embedded-firmware': 'hard-drive',
+                'skills-heading': 'layout-grid',
+                'exp-heading': 'briefcase',
+                'proj-heading': 'folder-git-2',
+                'edu-heading': 'library',
+                'edu-badge': 'award',
+                'exp-ai': 'sparkle',
+                'exp-state': 'gauge',
+                'exp-controllers': 'circuit-board',
+                'exp-updating': 'refresh-cw',
+                'exp-cameras': 'eye',
+                'exp-dashboards': 'layout-dashboard',
+                'exp-seminars': 'presentation',
+                'exp-dspic': 'server',
+                'exp-calibration': 'check-circle-2',
+                'proj-remote': 'shield',
+                'proj-pos': 'app-window',
+                'proj-retail': 'database',
+                'proj-godot': 'play-circle'
+            },
+            comfort: {
+                'cloud-sync': 'compass',
+                'delta-patch': 'feather',
+                'embedded-firmware': 'wrench',
+                'skills-heading': 'book-marked',
+                'exp-heading': 'coffee',
+                'proj-heading': 'palette',
+                'edu-heading': 'bookmark',
+                'edu-badge': 'heart',
+                'exp-ai': 'brain',
+                'exp-state': 'clock',
+                'exp-controllers': 'cog',
+                'exp-updating': 'send',
+                'exp-cameras': 'aperture',
+                'exp-dashboards': 'newspaper',
+                'exp-seminars': 'book-open',
+                'exp-dspic': 'pen-tool',
+                'exp-calibration': 'badge-check',
+                'proj-remote': 'feather',
+                'proj-pos': 'store',
+                'proj-retail': 'scroll',
+                'proj-godot': 'smile'
+            }
+        };
+
+        // SYSTEM ICONOGRAPHY FOR SKILLS (MORPHS PER SYSTEM)
+        const skillSystemIcons = {
+            tech: {
+                "C / C++": "code-2", "Go (Golang)": "cpu", "TypeScript": "file-code",
+                "Node.js": "server", "Yocto Linux": "terminal", "AWS EC2": "cloud",
+                "React": "atom", "dsPIC / Firmware": "cpu", "FPGA Flashing": "microchip",
+                "xdelta3 Patches": "binary", "CI / CD": "repeat", "Multi-threading": "git-branch"
+            },
+            fluent: {
+                "C / C++": "binary", "Go (Golang)": "box", "TypeScript": "file-text",
+                "Node.js": "server", "Yocto Linux": "laptop", "AWS EC2": "cloud",
+                "React": "app-window", "dsPIC / Firmware": "hard-drive", "FPGA Flashing": "circuit-board",
+                "xdelta3 Patches": "layers", "CI / CD": "refresh-cw", "Multi-threading": "network"
+            },
+            comfort: {
+                "C / C++": "pencil", "Go (Golang)": "feather", "TypeScript": "scroll",
+                "Node.js": "coffee", "Yocto Linux": "book-open", "AWS EC2": "compass",
+                "React": "palette", "dsPIC / Firmware": "wrench", "FPGA Flashing": "hammer",
+                "xdelta3 Patches": "bookmark", "CI / CD": "rotate-cw", "Multi-threading": "heart"
+            }
+        };
+
+        let currentActiveSystem = 'tech';
+        let currentActiveFilter = 'all';
+
+        // Update Dynamic Icons based on active design system
+        function updateDynamicIcons(systemKey) {
+            const iconMap = systemIconMap[systemKey] || systemIconMap['tech'];
+            document.querySelectorAll('[data-icon-role]').forEach(el => {
+                const role = el.getAttribute('data-icon-role');
+                const targetIcon = iconMap[role];
+                if (!targetIcon) return;
+
+                const newIcon = document.createElement('i');
+                newIcon.setAttribute('data-lucide', targetIcon);
+                newIcon.setAttribute('data-icon-role', role);
+                newIcon.className = el.className;
+                el.replaceWith(newIcon);
+            });
+        }
+
+        // TECHNICAL SKILLS DATA
+        const skillsData = [
+            { name: "C / C++", category: "languages", icon: "code" },
+            { name: "dsPIC / Firmware", category: "embedded", icon: "cpu" },
+            { name: "FPGA Flashing", category: "embedded", icon: "cpu" },
+            { name: "Go (Golang)", category: "languages", icon: "cpu" },
+            { name: "Node.js", category: "frameworks", icon: "server" },
+            { name: "TypeScript", category: "languages", icon: "file-code" },
+            { name: "JavaScript", category: "languages", icon: "file-text" },
+            { name: "Java", category: "languages", icon: "coffee" },
+            { name: "C#", category: "languages", icon: "terminal" },
+            { name: "Bash / PowerShell / Zsh", category: "languages", icon: "terminal" },
+            { name: "SQL", category: "languages", icon: "database" },
+            { name: "Enterprise AI Pipelines", category: "tools", icon: "bot" },
+            { name: "Qt Framework", category: "frameworks", icon: "layout" },
+            { name: "React", category: "frameworks", icon: "atom" },
+            { name: "Vite", category: "tools", icon: "zap" },
+            { name: "Express.js", category: "frameworks", icon: "server" },
+            { name: "Java Swing", category: "frameworks", icon: "monitor" },
+            { name: ".NET Core", category: "frameworks", icon: "box" },
+            { name: "Yocto Linux", category: "embedded", icon: "cpu" },
+            { name: "AWS EC2", category: "tools", icon: "cloud" },
+            { name: "MySQL", category: "databases", icon: "database" },
+            { name: "PostgreSQL", category: "databases", icon: "database" },
+            { name: "IBM DB2", category: "databases", icon: "hard-drive" },
+            { name: "MariaDB", category: "databases", icon: "database" },
+            { name: "xdelta3 Patches", category: "embedded", icon: "layers" },
+            { name: "RESTful APIs", category: "tools", icon: "network" },
+            { name: "Multi-threading", category: "embedded", icon: "git-branch" },
+            { name: "CI / CD", category: "tools", icon: "repeat" },
+            { name: "Git / SVN", category: "tools", icon: "git-commit" }
+        ];
+
+        // DEFENSIVE LUCIDE ICON INITIALIZER
+        function safeCreateIcons() {
+            try {
+                if (typeof lucide !== 'undefined' && lucide && typeof lucide.createIcons === 'function') {
+                    lucide.createIcons();
+                }
+            } catch (err) {
+                console.warn("Lucide rendering deferred:", err);
+            }
+        }
+
+        // MULTI-SYSTEM THEME ENGINE
+        function applyTheme(themeKey, notify = false) {
+            if (!themesConfig[themeKey]) themeKey = 'fluent-dark';
+            const config = themesConfig[themeKey];
+            currentActiveSystem = config.systemKey || 'fluent';
+
+            document.documentElement.setAttribute('data-theme', themeKey);
+            
+            // Sync Tailwind dark class
+            if (config.isDark) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            localStorage.setItem('portfolio-theme-id', themeKey);
+
+            // Update Header Label
+            const label = document.getElementById('active-theme-label');
+            if (label) label.textContent = config.name;
+
+            // Highlight Active Theme Option
+            document.querySelectorAll('.theme-option-btn').forEach(btn => {
+                if (btn.dataset.setTheme === themeKey) {
+                    btn.classList.add('ring-2', 'ring-indigo-500', 'font-bold');
+                } else {
+                    btn.classList.remove('ring-2', 'ring-indigo-500', 'font-bold');
+                }
+            });
+
+            // Dynamically update section and card icons to match design system
+            updateDynamicIcons(currentActiveSystem);
+            renderSkills(currentActiveFilter);
+
+            if (notify) {
+                showToast(`Applied ${config.name} (${config.system})`);
+            }
+            safeCreateIcons();
+        }
+
+        function initThemeEngine() {
+            const savedTheme = localStorage.getItem('portfolio-theme-id');
+            if (savedTheme && themesConfig[savedTheme]) {
+                applyTheme(savedTheme, false);
+            } else {
+                applyTheme('fluent-dark', false);
+            }
+
+            // Dropdown Toggle Setup
+            const dropdownBtn = document.getElementById('theme-dropdown-btn');
+            const dropdownMenu = document.getElementById('theme-dropdown-menu');
+            const chevron = document.getElementById('theme-chevron');
+
+            if (dropdownBtn && dropdownMenu) {
+                dropdownBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = !dropdownMenu.classList.contains('hidden');
+                    if (isOpen) {
+                        dropdownMenu.classList.add('hidden');
+                        if (chevron) chevron.classList.remove('rotate-180');
+                    } else {
+                        dropdownMenu.classList.remove('hidden');
+                        if (chevron) chevron.classList.add('rotate-180');
+                    }
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
+                        dropdownMenu.classList.add('hidden');
+                        if (chevron) chevron.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            // Theme Options Click Handlers
+            document.querySelectorAll('.theme-option-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const themeKey = btn.dataset.setTheme;
+                    applyTheme(themeKey, true);
+                    if (dropdownMenu) dropdownMenu.classList.add('hidden');
+                    if (chevron) chevron.classList.remove('rotate-180');
+                });
+            });
+        }
+
+        // UPDATE RESUME LINKS
+        function setupResumeLinks() {
+            const navBtn = document.getElementById('nav-resume-btn');
+            const heroBtn = document.getElementById('hero-resume-btn');
+            if (navBtn) navBtn.href = GOOGLE_DRIVE_RESUME_URL;
+            if (heroBtn) heroBtn.href = GOOGLE_DRIVE_RESUME_URL;
+        }
+
+        // RENDER SKILLS MATRIX (Dynamic theme icons & smooth animated appearance)
+        function renderSkills(filter = "all") {
+            currentActiveFilter = filter;
+            const grid = document.getElementById('skills-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            const filtered = filter === "all" 
+                ? skillsData 
+                : skillsData.filter(s => s.category === filter);
+
+            const systemIcons = skillSystemIcons[currentActiveSystem] || {};
+
+            filtered.forEach((skill, idx) => {
+                const iconName = systemIcons[skill.name] || skill.icon;
+                const card = document.createElement('div');
+                card.className = "glass-card glass-card-hover p-4 sm:p-4.5 flex flex-col justify-between h-[108px] border transition-all duration-300 group transform opacity-0 translate-y-2";
+                card.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <div class="icon-badge p-2 w-9 h-9 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                            <i data-lucide="${iconName}" class="w-[18px] h-[18px]"></i>
+                        </div>
+                    </div>
+                    <div class="font-semibold text-xs sm:text-[13.5px] tracking-tight transition-colors line-clamp-1" style="color: var(--text-primary);">${skill.name}</div>
+                `;
+                grid.appendChild(card);
+
+                setTimeout(() => {
+                    card.classList.remove('opacity-0', 'translate-y-2');
+                    card.classList.add('opacity-100', 'translate-y-0');
+                }, Math.min(idx * 16, 260));
+            });
+            
+            safeCreateIcons();
+        }
+
+        // SCROLL REVEAL ANIMATIONS ENGINE
+        function initScrollAnimations() {
+            if (!('IntersectionObserver' in window)) {
+                document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('is-visible'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // FILTER TABS HANDLER
+        document.querySelectorAll('.skill-tab').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                document.querySelectorAll('.skill-tab').forEach(t => {
+                    t.style.backgroundColor = 'transparent';
+                    t.style.border = 'none';
+                    t.classList.add('opacity-70');
+                    t.classList.remove('font-semibold', 'shadow-sm');
+                });
+                
+                const btn = e.currentTarget;
+                btn.classList.remove('opacity-70');
+                btn.classList.add('font-semibold', 'shadow-sm');
+                btn.style.backgroundColor = 'var(--bg-badge)';
+                btn.style.color = 'var(--accent-primary)';
+                btn.style.border = 'var(--border-icon)';
+
+                renderSkills(btn.dataset.filter);
+            });
+        });
+
+        // TOAST NOTIFICATION
+        function copyToClipboard(text, message) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            showToast(message || "Copied to clipboard!");
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            if (!toast || !toastMsg) return;
+            toastMsg.innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // INITIAL RENDER WITH RESILIENT CDN RETRIES
+        window.addEventListener('DOMContentLoaded', () => {
+            initThemeEngine();
+            setupResumeLinks();
+            renderSkills('all');
+            initScrollAnimations();
+            safeCreateIcons();
+
+            if (typeof lucide === 'undefined') {
+                let attempts = 0;
+                const checkLucideInterval = setInterval(() => {
+                    attempts++;
+                    if (typeof lucide !== 'undefined') {
+                        safeCreateIcons();
+                        clearInterval(checkLucideInterval);
+                    } else if (attempts >= 20) {
+                        clearInterval(checkLucideInterval);
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>
